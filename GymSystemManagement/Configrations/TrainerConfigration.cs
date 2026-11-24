@@ -8,8 +8,8 @@ namespace GymSystemManagement.Configrations
     {
          public void Configure(EntityTypeBuilder<Trainer> builder)
         {
-            builder.Property(x => x.CreatedAt).HasColumnName("HireDate").HasDefaultValueSql("GETDATE");
+            builder.Property(x => x.CreatedAt).HasColumnName("HireDate").HasDefaultValueSql("GETDATE()");
             base.Configure(builder);
-        }
+         }
     }
 }

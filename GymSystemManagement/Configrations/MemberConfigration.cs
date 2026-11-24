@@ -10,7 +10,7 @@ namespace GymSystemManagement.Configrations
         {
             builder.Property(x => x.CreatedAt)
                    .HasColumnName("JoinDate")
-                   .HasDefaultValueSql("GETDATE");
+                   .HasDefaultValueSql("GETDATE()");
             base.Configure(builder);// Apply Config Of GymUser
         }
     }

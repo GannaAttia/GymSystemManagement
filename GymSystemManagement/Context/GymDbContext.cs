@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System.Net;
+using System.Reflection;
 
 namespace GymSystemManagement.Context
 {
@@ -13,7 +14,7 @@ namespace GymSystemManagement.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) //Fluent API
         {
-
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
             #region DbSets
