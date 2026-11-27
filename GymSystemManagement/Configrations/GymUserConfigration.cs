@@ -28,8 +28,8 @@ namespace GymSystemManagement.Configrations
 
             builder.ToTable(T =>
             {
-                T.HasCheckConstraint("GymUser_EmailCheck", "Email LIKE '_%_@_._");
-                T.HasCheckConstraint("GymUser_PhoneCheck", "LEN(Phone) = 11 AND (Phone LIKE '011' OR Phone LIKE '010' OR Phone LIKE '012' OR Phone LIKE '015') ");
+                T.HasCheckConstraint("GymUser_EmailCheck", "Email LIKE '%_@_%._%'");
+                T.HasCheckConstraint("GymUser_PhoneCheck", "LEN(Phone) = 11 AND (Phone LIKE '011%' OR Phone LIKE '010%' OR Phone LIKE '012%' OR Phone LIKE '015%')");
 
             }
 

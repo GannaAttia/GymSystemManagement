@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System.Net;
+using System.Reflection;
 
 namespace GymSystemManagement.Context
 {
@@ -9,11 +10,11 @@ namespace GymSystemManagement.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.;Database=GymSystemManagement;Trusted_Connection=true;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("server=.\\SQLEXPRESS01;Database=GymSystemManagement;Trusted_Connection=true;TrustServerCertificate=true");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) //Fluent API
         {
-
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
             #region DbSets
